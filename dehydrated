@@ -126,10 +126,10 @@ jsonsh() {
     local SPACE='[[:space:]]+'
 
     # Force zsh to expand $A into multiple words
-    local is_wordsplit_disabled=$(unsetopt 2>/dev/null | grep -c '^shwordsplit$')
-    if [ $is_wordsplit_disabled != 0 ]; then setopt shwordsplit; fi
+    #local is_wordsplit_disabled=$(unsetopt 2>/dev/null | grep -c '^shwordsplit$')
+    #if [ $is_wordsplit_disabled != 0 ]; then setopt shwordsplit; fi
     $GREP "$STRING|$NUMBER|$KEYWORD|$SPACE|." | egrep -v "^$SPACE$"
-    if [ $is_wordsplit_disabled != 0 ]; then unsetopt shwordsplit; fi
+    #if [ $is_wordsplit_disabled != 0 ]; then unsetopt shwordsplit; fi
   }
 
   parse_array () {
